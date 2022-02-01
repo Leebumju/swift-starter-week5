@@ -62,8 +62,12 @@ class TalentedPersonWithBadPersonality: Person, Talent, BadPersonality {
 }
 
 struct AuditionManager {
-    var totalApplicantsList: [Person]
-    var passedApplicantsList: Array<Person> = Array<Person>()
+    public private(set) var totalApplicantsList: [Person]
+    private var passedApplicantsList: Array<Person> = Array<Person>()
+    
+    init(applicants: [Person]){
+        totalApplicantsList = applicants
+    }
     
     mutating func cast() {
         for applicant in totalApplicantsList {
@@ -101,8 +105,9 @@ let noroo = Person(name: "noroo", height: 1000)
 let summer = TalentedPerson(name: "summer", height: 900, singing: .B, dancing: .B, acting: .B)
 let coda = TalentedPerson(name: "coda", height: 200, singing: .A, dancing: .C, acting: .C)
 let odong = TalentedPersonWithBadPersonality(name: "odong", height: 400, singing: .A, dancing: .A, acting: .A, frequancyOfCoursing: .A)
+let mySon = Person(name: "nalgangdo", height: 10000)
 
-var auditionManager: AuditionManager = AuditionManager(totalApplicantsList: [yagom,noroo,summer,coda,odong])
+var auditionManager: AuditionManager = AuditionManager(applicants: [yagom,noroo,summer,coda,odong])
 
 auditionManager.cast()
 auditionManager.announcePassedApplicants()
