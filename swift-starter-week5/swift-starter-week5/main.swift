@@ -105,7 +105,19 @@ let noroo = Person(name: "noroo", height: 1000)
 let summer = TalentedPerson(name: "summer", height: 900, singing: .B, dancing: .B, acting: .B)
 let coda = TalentedPerson(name: "coda", height: 200, singing: .A, dancing: .C, acting: .C)
 let odong = TalentedPersonWithBadPersonality(name: "odong", height: 400, singing: .A, dancing: .A, acting: .A, frequancyOfCoursing: .A)
+
+/*
 let mySon = Person(name: "nalgangdo", height: 10000)
+
+struct Hacker {
+    func hackPassedApplicantsList() {
+        auditionManager.passedApplicantsList.append(mySon)
+    }
+}
+
+let hacker = Hacker()
+hacker.hackPassedApplicantsList()
+*/
 
 var auditionManager: AuditionManager = AuditionManager(applicants: [yagom,noroo,summer,coda,odong])
 
